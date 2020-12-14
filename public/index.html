@@ -11,6 +11,7 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet"> 
     <!-- External JS -->
@@ -23,10 +24,34 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter application</span>
+      <span>tweeter</span>
+      <header>
+       
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div>
+            <h2>Saoussen Slii</h2>
+        </div>
+    </header>
+    
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">just adding something temporary to see the styling
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      
+    </main>
   </body>
 </html>
