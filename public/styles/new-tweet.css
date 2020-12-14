@@ -1,0 +1,20 @@
+.new-tweet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.new-tweet > div {
+    display: flex;
+    flex-direction: column;
+}
+div button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.counter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
