@@ -1,0 +1,14 @@
+nav {
+    box-sizing: border-box;
+    height: 120px;
+    width: 100%;
+    background-color: #4056A1;
+    color: #ffffff;
+
+}
+span {
+  font-family: "Bungee";
+  padding: 1.5em;
+  border-top: 20px;
+
+}
