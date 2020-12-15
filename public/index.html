@@ -21,32 +21,39 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+ 
   </head>
 
   <body>
+    <script type="text/javascript">
+      function printMousePos(event) {
+        document.body.textContent= "clientX: " + event.clientX + " - clientY: " + event.clientY;
+     
+  }
+        document.addEventListener("click", printMousePos);
+        document.addEventListener("mouseover", () => {
+          document.body.textContent= "you moved your mouse";
+        });
+
+  </script>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <header>
-       
-        <div>
-            <img src="/images/profile-hex.png"> 
-        </div>
-        <br>
-        <div>
-            <h2>Saoussen Slii</h2>
-        </div>
-    </header>
-    
     </nav>
+    <header>
+      <img src="/images/profile-hex.png"> 
+ 
+      <h2 id= 'test'>Saoussen Slii</h2>
+</header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">just adding something temporary to see the styling
+    <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
+          <br>
           <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
