@@ -1,14 +1,13 @@
+
 nav {
-    box-sizing: border-box;
-    height: 120px;
     width: 100%;
+    overflow: hidden;
     background-color: #4056A1;
     color: #ffffff;
-
+    font-family: "Bungee";
+    padding: 1.5em;
+    border-top: 20px;
+    position: fixed;
+    top: 0;
 }
-span {
-  font-family: "Bungee";
-  padding: 1.5em;
-  border-top: 20px;
 
-}
