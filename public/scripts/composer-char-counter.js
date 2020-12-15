@@ -7,5 +7,8 @@ $(document).ready(function () {
             $('.counter').css('color', 'red');
         }
       });
+      $('.tweet').on('mouseover', function(){
+          $('.link').css('visibility', 'visible');
+      });
   });
   
