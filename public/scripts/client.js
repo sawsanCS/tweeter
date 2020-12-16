@@ -68,15 +68,15 @@ $(document).ready(function () {
           data: $(this).serialize(),
           success: function() {
             $('.container .new-tweet form')[0].reset();
-            
+            $('.counter').text(140);
             loadTweets();
           }
       });
-   
+    }
       loadTweets();
 
 
-       }
+       
         
   });
 });
