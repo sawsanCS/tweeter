@@ -7,6 +7,7 @@ const renderTweets = function (tweets) {
   $('.posted-tweets').html('');
   tweets.forEach(function (tweet) {
     let tweetElement = createTweetElement(tweet);
+  
     console.log( $('.posted-tweets'));
 
     $('.posted-tweets').prepend(tweetElement);
@@ -16,6 +17,17 @@ const loadTweets = function(){
   $.ajax({url: '/tweets', method: 'GET'}).then(function(data) {
    
     renderTweets(data)});
+}
+const validation = function(tweet) {
+  if (tweet==="") {
+    $('.counter').text("type a tweet, please");
+    return false;
+  } else if (tweet.length > 140) {
+    $('.counter').text("should not exceed 140 characters");
+    return false;
+  } else {
+    return true;
+  }
 }
 const createTweetElement = function(tweet) {
     return $(` <article class="tweet">
@@ -47,8 +59,9 @@ const createTweetElement = function(tweet) {
   };
 $(document).ready(function () {
     $('form').on('submit', function(event) {
+      
         event.preventDefault();
-       
+       if ( validation($(this).find("textarea").val())){
         $.ajax({
           url: '/tweets',
           method: 'POST',
@@ -59,9 +72,11 @@ $(document).ready(function () {
             loadTweets();
           }
       });
-    });
+   
       loadTweets();
 
 
+       }
+        
   });
-
+});
