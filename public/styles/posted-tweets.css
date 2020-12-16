@@ -1,59 +1,58 @@
-.tweets {
+.posted-tweets {
     display: flex;
     flex-direction: column;
     align-items: center;
   
-
-  
 }
-.tweet {
+.posted-tweets .tweet {
     border: 5px groove gray;
     padding: 10px;
     margin: 20px;
   font-size: 20px;
+  width: 65%;
 }
-.tweets .tweet .tweet-header {
+.posted-tweets .tweet .tweet-header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 10px;
-    border-top: 5px solid darkblue;
+    border-bottom: 5px solid darkblue;
 }
-.tweets .tweet .tweet-header .headshot{
+.posted-tweets .tweet .tweet-header .headshot{
     display: flex;
     align-items: flex-start;
 }
-.tweets .tweet .tweet-header .name{
+.posted-tweets .tweet .tweet-header .name{
     display: flex;
 
     align-items: center;
 }
-.tweets .tweet  .tweet-header .link{
+.posted-tweets .tweet  .tweet-header .link{
     display: flex;
     align-items: flex-end;
     visibility: hidden;
 }
-.tweets .tweet  .tweet-header .link{
+.posted-tweets .tweet  .tweet-header .link{
     display: flex;
     align-items: flex-end;
     
 }
-.tweets .tweet  .tweet-content{
+.posted-tweets .tweet  .tweet-content{
     display: flex;
     justify-content: center;
     border-bottom: 5px solid black;
 }
-.tweets .tweet  .tweet-footer {
+.posted-tweets .tweet  .tweet-footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-top: 20px;
 }
-.tweets .tweet  .tweet-footer .post-date {
+.posted-tweets .tweet  .tweet-footer .post-date {
     display: flex;
     align-items: flex-start;
 }
-.tweets .tweet  .tweet-footer .new-footer-span {
+.posted-tweets .tweet  .tweet-footer .new-footer-span {
     display: flex;
     align-items: flex-end;
     border-bottom: 5px solid saddlebrown;
