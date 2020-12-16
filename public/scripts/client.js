@@ -3,6 +3,16 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const renderTweets =function(tweets) {
+  tweets.forEach(function(tweet) {
+    let tweetElement = createTweetElement(tweet);
+    console.log( $('.posted-tweets'));
+    $('.posted-tweets').prepend(tweetElement);
+});
+}
+const loadTweets = function (){
+  $.ajax({url: '/tweets', method: 'GET'}).then( data => renderTweets(data));
+}
 const createTweetElement = function(tweet) {
     return $(` <article class="tweet">
     <section  class="tweet-header">
