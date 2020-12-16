@@ -3,15 +3,19 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const renderTweets =function(tweets) {
-  tweets.forEach(function(tweet) {
+const renderTweets = function (tweets) {
+  $('.posted-tweets').html('');
+  tweets.forEach(function (tweet) {
     let tweetElement = createTweetElement(tweet);
     console.log( $('.posted-tweets'));
+
     $('.posted-tweets').prepend(tweetElement);
 });
-}
-const loadTweets = function (){
-  $.ajax({url: '/tweets', method: 'GET'}).then( data => renderTweets(data));
+};
+const loadTweets = function(){
+  $.ajax({url: '/tweets', method: 'GET'}).then(function(data) {
+   
+    renderTweets(data)});
 }
 const createTweetElement = function(tweet) {
     return $(` <article class="tweet">
@@ -38,47 +42,26 @@ const createTweetElement = function(tweet) {
         </div>
     
     </footer>
-    </article>`)
+    </article>
+    `);
   };
 $(document).ready(function () {
-   
-    $('form').on('submit', (event)=> {
+    $('form').on('submit', function(event) {
         event.preventDefault();
-    $.ajax({url: '/tweets', method: 'POST'}).then( res => console.log(res));
-    $.ajax({url: '/tweets', method: 'GET'}).then( res => {
-        for (const tweet of Object.values(res)) {
-            const tweetElement = createTweetElement(tweet);
-            console.log( $('.tweet'));
-            $('.tweet').prepend(tweetElement);
-        } 
+       
+        $.ajax({
+          url: '/tweets',
+          method: 'POST',
+          data: $(this).serialize(),
+          success: function() {
+            $('.container .new-tweet form')[0].reset();
+            
+            loadTweets();
+          }
+      });
     });
-    });
-    
-});
+      loadTweets();
 
-{/* <article class="tweet">
 
-<section  class="tweet-header">
-  <img src="https://i.imgur.com/73hZDYK.png" class="headshot"/>
-  <P class='name'>Newton</P>
-  <p class="link">@Newton</p>
-</section>
+  });
 
-<section class="tweet-content">
-<p>Some Tweet that came to my mind</p>
-</section>
-
-<footer class="tweet-footer">
-
-  <div class="post-date">
-    10 days ago
-   </div>
-
-   <div class="tweet-footer-span">
-    <a class="icons" href="#"><i class="fa fa-flag" aria-hidden="true"></i></a>
-    <a class="icons" href="#"><i class="fa fa-retweet" aria-hidden="true"></i></a>
-    <a class="icons" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
-    </div>
-
-</footer>
-</article> */}
