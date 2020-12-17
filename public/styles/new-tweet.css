@@ -3,18 +3,43 @@
     flex-direction: column;
     align-items: center;
 }
+.new-tweet .error { 
+    border: 10px solid darkred ;
+    font: x-large;
+    width: 80%;
+    height: 100%;
+    visibility: hidden;
+
+}
 .new-tweet > div {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+}
+.new-tweet h2 {
+    display: flex;
+}
+.new-tweet label {
+    display: flex;
+}
+.new-tweet textarea {
+    display: flex;
+    border-bottom: inset;
 }
 div button {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    background-color: #4c5baf;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
 
 }
 .counter {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    
 }
