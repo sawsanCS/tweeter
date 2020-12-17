@@ -7,30 +7,30 @@ const renderTweets = function (tweets) {
   $('.posted-tweets').html('');
   tweets.forEach(function (tweet) {
     let tweetElement = createTweetElement(tweet);
-  
-    console.log( $('.posted-tweets'));
+
+    console.log($('.posted-tweets'));
 
     $('.posted-tweets').prepend(tweetElement);
-});
+  });
 };
-const loadTweets = function(){
-  $.ajax({url: '/tweets', method: 'GET'}).then(function(data) {
-   
-    renderTweets(data)});
+const loadTweets = function () {
+  $.ajax({ url: '/tweets', method: 'GET' }).then(function (data) {
+
+    renderTweets(data)
+  });
 }
-const validation = function(tweet) {
-  if (tweet==="") {
-    $('.counter').text("type a tweet, please");
-    return false;
+const validation = function (tweet) {
+  let errorMsg = "";
+  if (tweet === "") {
+    errorMsg = "type a tweet, please";
+
   } else if (tweet.length > 140) {
-    $('.counter').text("should not exceed 140 characters");
-    return false;
-  } else {
-    return true;
+    errorMsg = "should not exceed 140 characters";
   }
+  return errorMsg;
 }
-const createTweetElement = function(tweet) {
-    return $(` <article class="tweet">
+const createTweetElement = function (tweet) {
+  return $(` <article class="tweet">
     <section  class="tweet-header">
       <img src="${tweet.user.avatars}" class="headshot"/>
       <P class='name'>${tweet.user.name}</P>
@@ -56,27 +56,32 @@ const createTweetElement = function(tweet) {
     </footer>
     </article>
     `);
-  };
+};
 $(document).ready(function () {
-    $('form').on('submit', function(event) {
-      
-        event.preventDefault();
-       if ( validation($(this).find("textarea").val())){
-        $.ajax({
-          url: '/tweets',
-          method: 'POST',
-          data: $(this).serialize(),
-          success: function() {
-            $('.container .new-tweet form')[0].reset();
-            $('.counter').text(140);
-            loadTweets();
-          }
+  $('form').on('submit', function (event) {
+
+    event.preventDefault();
+    let val =validation($(this).find("textarea").val());
+    console.log($(this))
+    console.log(val);
+    if (val === "") {
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+        data: $(this).serialize(),
+        success: function () {
+          $('.container .new-tweet form')[0].reset();
+          $('.counter').text(140)
+          loadTweets();
+        }
       });
-    }
       loadTweets();
-
-
-       
-        
+    } else {
+      $('.error').css('visibility', 'visible');
+      $('.error').text(val);
+    }
+  $('form textarea').on('focus', function (event){
+    $('.error').css('visibility', 'hidden');
+  })
   });
 });
