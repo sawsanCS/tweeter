@@ -38,7 +38,7 @@ const createTweetElement = function (tweet) {
     </section>
     
     <section class="tweet-content">
-    <p>${tweet.content.text}</p>
+    <p>${escape(tweet.content.text)}</p>
     </section>
     
     <footer class="tweet-footer">
