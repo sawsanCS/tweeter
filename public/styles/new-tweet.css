@@ -4,12 +4,14 @@
     align-items: center;
 }
 .new-tweet .error { 
-    border: 10px solid darkred ;
-    font: x-large;
-    width: 80%;
-    height: 100%;
-    visibility: hidden;
-
+    background: #c51244 !important;
+    padding: 10px !important;
+    border-radius: 0 !important;
+    position: relative; 
+    display: inline-block !important;
+    box-shadow: 1px 1px 1px #aaaaaa;
+    margin-top: 10px;
+  visibility: hidden;
 }
 .new-tweet > div {
     display: flex;
