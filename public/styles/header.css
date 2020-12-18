@@ -16,6 +16,7 @@ header {
     header {   
         width: 40%;
         height: 100%;
+
       }
   }
 
@@ -24,4 +25,5 @@ img{
 }
 div h2 {
     font-family: inherit;
+
 }
