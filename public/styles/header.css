@@ -11,6 +11,14 @@ header {
 
 }
 
+@media only screen and (max-width: 900px) {
+    /* Write smartphone only styles here */
+    header {   
+        width: 40%;
+        height: 100%;
+      }
+  }
+
 img{
    size: initial;
 }
