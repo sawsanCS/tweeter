@@ -15,17 +15,92 @@ html {
  */
 
 body {
-  display: flex;
-  flex-direction: column;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
 }
-.container {
-  display: flex;
+
+main {
   width: 90%;
-  align-content: center;
-  color: inherit;
+  margin: auto;
+
+
+}
+@media only screen and (max-width: 900px) {
+  main {
+    width: 40%;
+    float: right;
+  
+  }
+  .styleForTablets {
+    display: flex;
+    flex-direction: row;
+
+  }
+  .posted-tweets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    
+  
+}
+.container {
+  padding: 1.5em;
+}
+.posted-tweets .tweet {
+    border: 2px groove gray;
+    padding: 2px;
+    margin: 2px;
+    font-size: 20px;
+    width: 100%;
+}
+.posted-tweets .tweet .tweet-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2px;
+    border-bottom: 2px solid darkblue;
+}
+.posted-tweets .tweet .tweet-header .headshot{
+    display: flex;
+    align-items: flex-start;
+}
+.posted-tweets .tweet .tweet-header .name{
+    display: flex;
+
+    align-items: center;
+}
+.posted-tweets .tweet  .tweet-header .link{
+    display: flex;
+    align-items: flex-end;
+    visibility: hidden;
+}
+.posted-tweets .tweet  .tweet-header .link{
+    display: flex;
+    align-items: flex-end;
+    
+}
+.posted-tweets .tweet  .tweet-content{
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid black;
+}
+.posted-tweets .tweet  .tweet-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 2px;
+}
+.posted-tweets .tweet  .tweet-footer .post-date {
+    display: flex;
+    align-items: flex-start;
+}
+.posted-tweets .tweet  .tweet-footer .new-footer-span {
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 2px groove saddlebrown;
+}
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
