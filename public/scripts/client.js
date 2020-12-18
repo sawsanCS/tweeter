@@ -8,47 +8,51 @@
   * @param datetime returned by Twitter API in created_at
   * @return time since in html
   */
-const calculateSince = function (datetime) {
-  let tTime = new Date(datetime);
-  let cTime = new Date();
-  let sinceMin = Math.round((cTime - tTime) / 60000);
-  if (sinceMin == 0) {
-    let sinceSec = Math.round((cTime - tTime) / 1000);
-    if (sinceSec < 10)
-      let since = 'less than 10 seconds ago';
-    else if (sinceSec < 20)
-      let since = 'less than 20 seconds ago';
-    else
-      let since = 'half a minute ago';
-  }
-  else if (sinceMin == 1) {
-    let sinceSec = Math.round((cTime - tTime) / 1000);
-    if (sinceSec == 30)
-      let since = 'half a minute ago';
-    else if (sinceSec < 60)
-      let since = 'less than a minute ago';
-    else
-      let since = '1 minute ago';
-  }
-  else if (sinceMin < 45)
-    let since = sinceMin + ' minutes ago';
-  else if (sinceMin > 44 && sinceMin < 60)
-    let since = 'about 1 hour ago';
-  else if (sinceMin < 1440) {
-    let sinceHr = Math.round(sinceMin / 60);
-    if (sinceHr == 1)
-      let since = 'about 1 hour ago';
-    else
-      let since = 'about ' + sinceHr + ' hours ago';
-  }
-  else if (sinceMin > 1439 && sinceMin < 2880)
-    let since = '1 day ago';
-  else {
-    let sinceDay = Math.round(sinceMin / 1440);
-    let since = sinceDay + ' days ago';
-  }
-  return since;
-};
+ const calculateSince = function(datetime)
+ {
+     var tTime=new Date(datetime);
+     var cTime=new Date();
+     var sinceMin=Math.round((cTime-tTime)/60000);
+     if(sinceMin==0)
+     {
+         var sinceSec=Math.round((cTime-tTime)/1000);
+         if(sinceSec<10)
+           var since='less than 10 seconds ago';
+         else if(sinceSec<20)
+           var since='less than 20 seconds ago';
+         else
+           var since='half a minute ago';
+     }
+     else if(sinceMin==1)
+     {
+         var sinceSec=Math.round((cTime-tTime)/1000);
+         if(sinceSec==30)
+           var since='half a minute ago';
+         else if(sinceSec<60)
+           var since='less than a minute ago';
+         else
+           var since='1 minute ago';
+     }
+     else if(sinceMin<45)
+         var since=sinceMin+' minutes ago';
+     else if(sinceMin>44&&sinceMin<60)
+         var since='about 1 hour ago';
+     else if(sinceMin<1440){
+         var sinceHr=Math.round(sinceMin/60);
+     if(sinceHr==1)
+       var since='about 1 hour ago';
+     else
+       var since='about '+sinceHr+' hours ago';
+     }
+     else if(sinceMin>1439&&sinceMin<2880)
+         var since='1 day ago';
+     else
+     {
+         var sinceDay=Math.round(sinceMin/1440);
+         var since=sinceDay+' days ago';
+     }
+     return since;
+ };
 
 const renderTweets = function (tweets) {
   $('.posted-tweets').html('');
@@ -61,7 +65,7 @@ const renderTweets = function (tweets) {
   });
 };
 
-const escape = function (str) {
+const escape = function(str) {
   let p = document.createElement('p');
   p.appendChild(document.createTextNode(str));
   return p.innerHTML;
@@ -131,6 +135,7 @@ $(document).ready(function () {
     } else {
       $('.error').css('visibility', 'visible');
       $('.error').text(val);
+      $('.counter').text(140)
     }
     $('form textarea').on('focus', function (event) {
       $('.error').css('visibility', 'hidden');

@@ -57,6 +57,7 @@
     <span>tweeter</span>
     <button href="#" class="compose" type="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Write a new tweet</button>
   </nav>
+  <section class="styleForTablets">
   <header>
     <img src="/images/profile-hex.png">
 
@@ -67,7 +68,9 @@
   <main class="container">
     <section class="new-tweet">
       <p class="error"> </p>
-      <h2>Compose Tweet</h2>
+      <h2>
+       
+        Compose Tweet</h2>
       <form action="/tweets" method="POST">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
@@ -75,7 +78,6 @@
         <div>
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text" id="counter">140</output>
-         
         </div>
         
       </form>
@@ -86,6 +88,7 @@
       
     </section>
   </main>
+</section>
 </body>
 
 </html>
