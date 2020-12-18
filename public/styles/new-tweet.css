@@ -12,9 +12,9 @@
     background: #c51244 !important;
     padding: 10px !important;
     border-radius: 0 !important;
-    position: relative; 
+    position: relative;
     display: inline-block !important;
-    box-shadow: 1px 1px 1px #aaaaaa;
+    box-shadow: 5px 5px 5px #aaaaaa;
     margin-top: 10px;
   visibility: hidden;
 }
@@ -51,7 +51,7 @@ div button {
     font-family: "bungee";
     
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (min-width: 900px) {
     .new-tweet {
         display: flex;
         flex-direction: column;
@@ -61,12 +61,11 @@ div button {
     }
     .new-tweet .error { 
         background: #c51244 !important;
-        padding: 10px !important;
+        padding: 20px !important;
         border-radius: 0 !important;
-        position: relative; 
         display: inline-block !important;
-        box-shadow: 1px 1px 1px #aaaaaa;
-        margin-top: 5px;
+        box-shadow: 5px 5px 5px #aaaaaa;
+        margin-top: 30px;
       visibility: hidden;
     }
     .new-tweet > div {
@@ -91,10 +90,10 @@ div button {
         background-color: #4c5baf;
         border: none;
         color: white;
-        padding: 7px 16px;
+        padding: 15px 32px;
         text-align: center;
         text-decoration: none;
-        font-size: 10px;
+        font-size: 20px;
     
     }
     .counter {
