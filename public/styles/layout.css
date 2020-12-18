@@ -28,7 +28,7 @@ main {
 }
 @media only screen and (min-width: 900px) {
   main {
-    width: 40%;
+    width: 100%;
     float: right;
   
   }
@@ -76,11 +76,7 @@ main {
     align-items: flex-end;
     visibility: hidden;
 }
-.posted-tweets .tweet  .tweet-header .link{
-    display: flex;
-    align-items: flex-end;
-    
-}
+
 .posted-tweets .tweet  .tweet-content{
     display: flex;
     justify-content: center;
