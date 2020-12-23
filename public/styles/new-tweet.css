@@ -33,9 +33,7 @@
     border-bottom: inset;
 }
 div button {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    float: left;
     background-color: #4c5baf;
     border: none;
     color: white;
@@ -45,12 +43,14 @@ div button {
     font-size: 16px;
 
 }
-.counter {
-    display: flex;
-    justify-content: flex-end;
+#counter {
     font-family: "bungee";
-    
+    float: right;
 }
+#counter .incorrect {
+    color: red;
+}
+
 @media only screen and (min-width: 900px) {
     .new-tweet {
         display: flex;
