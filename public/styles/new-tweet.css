@@ -83,10 +83,11 @@ div button {
         display: flex;
         border-bottom: inset;
     }
+    .incorrect {
+        color: red;
+    }
     div button {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        float: left;
         background-color: #4c5baf;
         border: none;
         color: white;
@@ -96,10 +97,8 @@ div button {
         font-size: 20px;
     
     }
-    .counter {
-        display: flex;
-        justify-content: flex-end;
+    #counter {
         font-family: "bungee";
-        
+        float: right;
     }
 }
