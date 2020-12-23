@@ -115,8 +115,8 @@ const createTweetElement = function (tweet) {
     `);
 };
 $(document).ready(function () {
-  $('form').on('submit', function (event) {
 
+  $('form').on('submit', function (event) {
     event.preventDefault();
     let val = validation($(this).find("textarea").val());
 
@@ -127,18 +127,24 @@ $(document).ready(function () {
         data: $(this).serialize(),
         success: function () {
           $('.container .new-tweet form')[0].reset();
-          $('.counter').text(140)
+          $('#counter').text(140);
           loadTweets();
         }
       });
       loadTweets();
+    } else if (val === 'type a tweet, please') {
+      $('.error').css('visibility', 'visible');
+      $('.error').text(val);
+      $('#counter').text(140);
     } else {
       $('.error').css('visibility', 'visible');
       $('.error').text(val);
-      $('.counter').text(140)
+    
     }
     $('form textarea').on('focus', function (event) {
       $('.error').css('visibility', 'hidden');
     })
   });
+  loadTweets();
 });
+
